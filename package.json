@@ -1,0 +1,14 @@
+{
+  "name": "leet-code",
+  "version": "1.0.0",
+  "description": "solutions for leetcode problems",
+  "private": true,
+  "scripts": {
+    "test": "jest --watchAll=false"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.5.0"
+  }
+}
