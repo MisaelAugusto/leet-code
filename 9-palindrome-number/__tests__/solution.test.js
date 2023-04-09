@@ -1,6 +1,6 @@
 const solution = require('../solution');
 
-test("3. Palindrome Number", () => {
+test("9. Palindrome Number", () => {
   expect(solution(121)).toEqual(true);
 
   expect(solution(-121)).toEqual(false);
