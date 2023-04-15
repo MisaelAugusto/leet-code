@@ -5,7 +5,6 @@ function ListNode(val, next) {
   this.next = (next===undefined ? null : next)
 };
 
-// FIX THIS METHOD
 function LinkedList(list) {
   let linkedList = new ListNode(list[0]);
 
@@ -27,7 +26,7 @@ test("21. Merge Two Sorted Lists", () => {
 
   expect(solution(l1, l2)).toEqual(l3);
 
-  const l4 = new LinkedList([]);
+  const l4 = null;
   expect(solution(l4, l4)).toEqual(l4);
 
   const l5 = new LinkedList([0]);
