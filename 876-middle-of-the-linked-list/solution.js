@@ -17,22 +17,33 @@ function ListNode(val, next) {
   this.next = (next===undefined ? null : next)
 };
 
+// const middleNode = (head) => {
+//   let temp = head, size = 0;
+//   while (temp) {
+//     temp = temp.next;
+//     size++;
+//   }
+
+//   let middleIndex = Math.floor(size / 2);
+
+//   let middleNode = head;
+//   while (middleIndex > 0) {
+//     middleNode = middleNode.next;
+//     middleIndex--;
+//   }
+
+//   return middleNode;
+// };
+
 const middleNode = (head) => {
-  let temp = head, size = 0;
-  while (temp) {
-    temp = temp.next;
-    size++;
+  let middle = head, end = head;
+
+  while (end && end.next) {
+    middle = middle.next;
+    end = end.next.next;
   }
 
-  let middleIndex = Math.floor(size / 2);
-
-  let middleNode = head;
-  while (middleIndex > 0) {
-    middleNode = middleNode.next;
-    middleIndex--;
-  }
-
-  return middleNode;
+  return middle;
 };
 
 module.exports = middleNode;
