@@ -28,7 +28,7 @@ test("142. Linked List Cycle II", () => {
   const l2 = new LinkedList([3, 2, 0, -4, l1]);
   expect(solution(l2)).toEqual(l1);
 
-  const l4 = [1, 2];
+  const l4 = new LinkedList([1, 2]);
   let l5 = l4;
   l5.next.next = l4;
   expect(solution(l4)).toEqual(l5);

@@ -35,16 +35,38 @@ function ListNode(val, next) {
 //   return currentNode;
 // };
 
-const detectCycle = (head) => {
-  const visitedNodes = [];
+// const detectCycle = (head) => {
+//   const visitedNodes = new Set();
 
-  let currentNode = head;
-  while (currentNode && !visitedNodes.includes(currentNode)) {
-    visitedNodes.push(currentNode);
-    currentNode = currentNode.next;
+//   let currentNode = head;
+//   while (currentNode && !visitedNodes.has(currentNode)) {
+//     visitedNodes.add(currentNode);
+//     currentNode = currentNode.next;
+//   }
+
+//   return currentNode;
+// }
+
+const detectCycle = (head) => {
+  let slow = head, fast = head;
+
+  while (fast && fast.next && fast.next.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+
+    if (slow === fast) {
+      let temp = head;
+
+      while (slow !== temp) {
+        temp = temp.next;
+        slow = slow.next;
+      }
+
+      return slow;
+    }
   }
 
-  return currentNode;
+  return null;
 };
 
 module.exports = detectCycle;
